@@ -13,17 +13,47 @@ protocol LoginViewControllerDelegate: AnyObject {
 
 class LoginViewController: BaseViewController, CreatedFromNib {
     
-    weak var delegate: LoginViewControllerDelegate?
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
-    var viewModel: LoginViewModel!
+    weak var delegate: LoginViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        initViews()
+        initViewModel()
     }
+    
+    var viewModel: LoginViewModel!
+    var inputs: LoginViewModelInputs { return viewModel.inputs }
+    var outputs: LoginViewModelOutputs { return viewModel.outputs }
     
     deinit {
         print("--Deallocating \(self)")
     }
 
+}
+
+// MARK: - Init views
+extension LoginViewController {
+    private func initViews() {
+        
+    }
+}
+
+// MARK: - Bindings
+extension LoginViewController {
+    private func initViewModel() {
+        bindInputs()
+        bindOutputs()
+    }
+    
+    private func bindInputs() {
+        
+    }
+    
+    private func bindOutputs() {
+        
+    }
 }

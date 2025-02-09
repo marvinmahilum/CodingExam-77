@@ -15,6 +15,7 @@
 		5860BA712D5833B90061B6B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5860BA6F2D5833B90061B6B2 /* LoginViewController.xib */; };
 		5860BA732D5833D10061B6B2 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860BA722D5833D10061B6B2 /* LoginBuilder.swift */; };
 		5860BA752D5833E30061B6B2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860BA742D5833E30061B6B2 /* LoginViewModel.swift */; };
+		5860BA782D583EDB0061B6B2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860BA772D583EDB0061B6B2 /* UIView+.swift */; };
 		58C45DA52D574DE80014DF63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C45DA42D574DE80014DF63 /* AppDelegate.swift */; };
 		58C45DA72D574DE80014DF63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C45DA62D574DE80014DF63 /* SceneDelegate.swift */; };
 		58C45DAE2D574DE90014DF63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C45DAD2D574DE90014DF63 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		5860BA6F2D5833B90061B6B2 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		5860BA722D5833D10061B6B2 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		5860BA742D5833E30061B6B2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5860BA772D583EDB0061B6B2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		58C45DA12D574DE80014DF63 /* CodingExam-77.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CodingExam-77.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C45DA42D574DE80014DF63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58C45DA62D574DE80014DF63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				58C45DA42D574DE80014DF63 /* AppDelegate.swift */,
 				58C45DA62D574DE80014DF63 /* SceneDelegate.swift */,
+				5860BA762D583E9D0061B6B2 /* extensions */,
 				5860BA692D582BAD0061B6B2 /* ui */,
 			);
 			path = app;
@@ -103,6 +106,14 @@
 				5860BA742D5833E30061B6B2 /* LoginViewModel.swift */,
 			);
 			path = screens;
+			sourceTree = "<group>";
+		};
+		5860BA762D583E9D0061B6B2 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5860BA772D583EDB0061B6B2 /* UIView+.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		58C45D982D574DE80014DF63 = {
@@ -208,6 +219,7 @@
 				58C45DA52D574DE80014DF63 /* AppDelegate.swift in Sources */,
 				5860BA662D582A3D0061B6B2 /* CreatedFromNib.swift in Sources */,
 				5860BA702D5833B90061B6B2 /* LoginViewController.swift in Sources */,
+				5860BA782D583EDB0061B6B2 /* UIView+.swift in Sources */,
 				5860BA642D582A000061B6B2 /* CoordinatorType.swift in Sources */,
 				5860BA732D5833D10061B6B2 /* LoginBuilder.swift in Sources */,
 				58C45DA72D574DE80014DF63 /* SceneDelegate.swift in Sources */,
