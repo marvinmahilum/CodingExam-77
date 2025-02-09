@@ -5,7 +5,6 @@
 //  Created by Marvin on 2/8/25.
 //
 
-import Foundation
 import RxCocoa
 import RxSwift
 import UIKit
@@ -49,5 +48,4 @@ extension LoginViewModel: LoginViewModelInputs {
             self.isLoginSuccess.accept(false)
         }
     }
-    
 }

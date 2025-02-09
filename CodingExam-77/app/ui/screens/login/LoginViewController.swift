@@ -5,12 +5,13 @@
 //  Created by Marvin on 2/8/25.
 //
 
-import UIKit
 import RxCocoa
 import RxSwift
+import UIKit
 
 protocol LoginViewControllerDelegate: AnyObject {
     func dismiss(_ vc: LoginViewController)
+    func goToWelcomeScreen(_ vc: LoginViewController)
 }
 
 class LoginViewController: BaseViewController, CreatedFromNib {
@@ -36,7 +37,6 @@ class LoginViewController: BaseViewController, CreatedFromNib {
     deinit {
         print("--Deallocating \(self)")
     }
-
 }
 
 // MARK: - Init views
@@ -52,11 +52,9 @@ extension LoginViewController {
             .asDriver()
             .drive(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                
                 let username = self.usernameTextField.text
                 let password = self.passwordTextField.text
                 self.inputs.loginTapped(username: username, password: password)
-                
             }).disposed(by: disposeBag)
     }
 }
@@ -79,6 +77,10 @@ extension LoginViewController {
             .asObservable()
             .subscribe(onNext: { [unowned self] (isLoginSuccess) in
                 if isLoginSuccess {
+                    self.usernameTextField.text = ""
+                    self.passwordTextField.text = ""
+                    self.usernameTextField.becomeFirstResponder()
+                    self.delegate?.goToWelcomeScreen(self)
                     
                 } else {
                     let message = "The username or password you've entered is incorrect"

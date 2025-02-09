@@ -22,11 +22,24 @@ class MainCoordinator: CoordinatorType {
         vc.modalPresentationStyle = .fullScreen
         navigationController.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension MainCoordinator: LoginViewControllerDelegate {
     func dismiss(_ vc: LoginViewController) {
         
+    }
+    
+    func goToWelcomeScreen(_ vc: LoginViewController) {
+        DispatchQueue.main.async {
+            let vc = WelcomeBuilder.build()
+            vc.delegate = self
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+extension MainCoordinator: WelcomeViewControllerDelegate {
+    func dismiss(_ vc: WelcomeViewController) {
     }
 }

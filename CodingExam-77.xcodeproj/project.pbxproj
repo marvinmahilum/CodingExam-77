@@ -11,6 +11,10 @@
 		583923172D584C7B0066B8DF /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 583923162D584C7B0066B8DF /* RxRelay */; };
 		583923192D584C7B0066B8DF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 583923182D584C7B0066B8DF /* RxSwift */; };
 		5839231B2D584FE10066B8DF /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5839231A2D584FE10066B8DF /* UIViewController+showAlert.swift */; };
+		583923202D585B510066B8DF /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5839231E2D585B510066B8DF /* WelcomeViewController.swift */; };
+		583923212D585B510066B8DF /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5839231F2D585B510066B8DF /* WelcomeViewController.xib */; };
+		583923232D585B5F0066B8DF /* WelcomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583923222D585B5F0066B8DF /* WelcomeBuilder.swift */; };
+		583923252D585B6C0066B8DF /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583923242D585B6C0066B8DF /* WelcomeViewModel.swift */; };
 		5860BA642D582A000061B6B2 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860BA632D582A000061B6B2 /* CoordinatorType.swift */; };
 		5860BA662D582A3D0061B6B2 /* CreatedFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860BA652D582A3D0061B6B2 /* CreatedFromNib.swift */; };
 		5860BA682D582A6B0061B6B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5860BA672D582A6B0061B6B2 /* BaseViewController.swift */; };
@@ -28,6 +32,10 @@
 
 /* Begin PBXFileReference section */
 		5839231A2D584FE10066B8DF /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+showAlert.swift"; sourceTree = "<group>"; };
+		5839231E2D585B510066B8DF /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5839231F2D585B510066B8DF /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		583923222D585B5F0066B8DF /* WelcomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBuilder.swift; sourceTree = "<group>"; };
+		583923242D585B6C0066B8DF /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		5860BA632D582A000061B6B2 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		5860BA652D582A3D0061B6B2 /* CreatedFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedFromNib.swift; sourceTree = "<group>"; };
 		5860BA672D582A6B0061B6B2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +67,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5839231C2D585B1D0066B8DF /* login */ = {
+			isa = PBXGroup;
+			children = (
+				5860BA722D5833D10061B6B2 /* LoginBuilder.swift */,
+				5860BA6E2D5833B90061B6B2 /* LoginViewController.swift */,
+				5860BA6F2D5833B90061B6B2 /* LoginViewController.xib */,
+				5860BA742D5833E30061B6B2 /* LoginViewModel.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		5839231D2D585B2B0066B8DF /* welcome */ = {
+			isa = PBXGroup;
+			children = (
+				583923222D585B5F0066B8DF /* WelcomeBuilder.swift */,
+				5839231E2D585B510066B8DF /* WelcomeViewController.swift */,
+				5839231F2D585B510066B8DF /* WelcomeViewController.xib */,
+				583923242D585B6C0066B8DF /* WelcomeViewModel.swift */,
+			);
+			path = welcome;
+			sourceTree = "<group>";
+		};
 		5860BA602D5829BA0061B6B2 /* core */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +138,8 @@
 		5860BA6B2D582BDC0061B6B2 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				5860BA722D5833D10061B6B2 /* LoginBuilder.swift */,
-				5860BA6E2D5833B90061B6B2 /* LoginViewController.swift */,
-				5860BA6F2D5833B90061B6B2 /* LoginViewController.xib */,
-				5860BA742D5833E30061B6B2 /* LoginViewModel.swift */,
+				5839231C2D585B1D0066B8DF /* login */,
+				5839231D2D585B2B0066B8DF /* welcome */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -220,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C45DB12D574DE90014DF63 /* LaunchScreen.storyboard in Resources */,
+				583923212D585B510066B8DF /* WelcomeViewController.xib in Resources */,
 				58C45DAE2D574DE90014DF63 /* Assets.xcassets in Resources */,
 				5860BA712D5833B90061B6B2 /* LoginViewController.xib in Resources */,
 			);
@@ -235,12 +264,15 @@
 				5860BA6D2D582BFF0061B6B2 /* MainCoordinator.swift in Sources */,
 				58C45DA52D574DE80014DF63 /* AppDelegate.swift in Sources */,
 				5860BA662D582A3D0061B6B2 /* CreatedFromNib.swift in Sources */,
+				583923252D585B6C0066B8DF /* WelcomeViewModel.swift in Sources */,
+				583923232D585B5F0066B8DF /* WelcomeBuilder.swift in Sources */,
 				5860BA702D5833B90061B6B2 /* LoginViewController.swift in Sources */,
 				5860BA782D583EDB0061B6B2 /* UIView+.swift in Sources */,
 				5860BA642D582A000061B6B2 /* CoordinatorType.swift in Sources */,
 				5860BA732D5833D10061B6B2 /* LoginBuilder.swift in Sources */,
 				58C45DA72D574DE80014DF63 /* SceneDelegate.swift in Sources */,
 				5860BA752D5833E30061B6B2 /* LoginViewModel.swift in Sources */,
+				583923202D585B510066B8DF /* WelcomeViewController.swift in Sources */,
 				5860BA682D582A6B0061B6B2 /* BaseViewController.swift in Sources */,
 				5839231B2D584FE10066B8DF /* UIViewController+showAlert.swift in Sources */,
 			);

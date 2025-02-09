@@ -83,7 +83,7 @@
                                                 <constraint firstAttribute="height" constant="50" id="Nmz-Di-ofa"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerradius">
                                                     <real key="value" value="3"/>

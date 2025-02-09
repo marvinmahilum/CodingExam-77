@@ -8,7 +8,6 @@
 import Foundation
 
 class LoginBuilder {
-    
     static func build() -> LoginViewController {
         let vc = LoginViewController.createFromNib()
         
@@ -21,5 +20,4 @@ class LoginBuilder {
         
         return vc
     }
-    
 }
