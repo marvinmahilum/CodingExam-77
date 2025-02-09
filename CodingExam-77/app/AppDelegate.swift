@@ -10,10 +10,14 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    var mainCoordinator: MainCoordinator?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        initWindow()
+        
         return true
     }
 
@@ -34,3 +38,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    
+    private func initWindow() {
+        
+        let navController = UINavigationController()
+        mainCoordinator = MainCoordinator(navController: navController)
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        mainCoordinator?.start()
+        
+    }
+    
+}
