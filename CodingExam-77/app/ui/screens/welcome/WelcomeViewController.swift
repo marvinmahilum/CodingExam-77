@@ -16,19 +16,26 @@ protocol WelcomeViewControllerDelegate: AnyObject {
 class WelcomeViewController: BaseViewController, CreatedFromNib {
     
     weak var delegate: WelcomeViewControllerDelegate?
-
+    
+    // MARK: - Outlets
+    
+    
+    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
         initViewModel()
     }
     
+    // MARK: - ViewModel
     var viewModel: WelcomeViewModel!
     var inputs: WelcomeViewModelInputs { return viewModel.inputs }
     var outputs: WelcomeViewModelOutputs { return viewModel.outputs }
     
+    // MARK: - Private
     private var disposeBag = DisposeBag()
     
+    // MARK: - Deinit
     deinit {
         print("--Deallocating \(self)")
     }

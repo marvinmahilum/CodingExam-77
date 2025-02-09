@@ -16,24 +16,29 @@ protocol LoginViewControllerDelegate: AnyObject {
 
 class LoginViewController: BaseViewController, CreatedFromNib {
     
+    weak var delegate: LoginViewControllerDelegate?
+    
+    // MARK: - Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
-    weak var delegate: LoginViewControllerDelegate?
 
+    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
         initViewModel()
     }
     
+    // MARK: - ViewModel
     var viewModel: LoginViewModel!
     var inputs: LoginViewModelInputs { return viewModel.inputs }
     var outputs: LoginViewModelOutputs { return viewModel.outputs }
     
+    // MARK: - Private
     private var disposeBag = DisposeBag()
     
+    // MARK: - Deinit
     deinit {
         print("--Deallocating \(self)")
     }

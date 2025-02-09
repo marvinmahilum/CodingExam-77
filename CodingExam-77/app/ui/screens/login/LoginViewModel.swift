@@ -20,6 +20,7 @@ protocol LoginViewModelOutputs {
 
 class LoginViewModel: LoginViewModelOutputs {
     
+    // MARK: - Init
     struct Dependency {
         
     }
@@ -31,16 +32,20 @@ class LoginViewModel: LoginViewModelOutputs {
     var inputs: LoginViewModelInputs { return self }
     var outputs: LoginViewModelOutputs { return self }
     
+    // MARK: - Outputs
     let errorMessage: BehaviorRelay<String> = BehaviorRelay(value: "")
     let isLoginSuccess: PublishRelay<Bool> = PublishRelay()
     
+    // MARK: - Private
     private var dependency: Dependency
     
+    // MARK: - Deinit
     deinit {
         print("--Deallocating \(self)")
     }
 }
 
+// MARK: - Input(s)
 extension LoginViewModel: LoginViewModelInputs {
     func loginTapped(username: String?, password: String?) {
         
