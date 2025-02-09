@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
+import UIKit
 
 protocol LoginViewModelInputs {
-    
+    func loginTapped(username: String?, password: String?)
 }
 
 protocol LoginViewModelOutputs {
-    
+    var isLoginSuccess: PublishRelay<Bool> { get }
 }
 
 class LoginViewModel: LoginViewModelOutputs {
@@ -28,6 +31,8 @@ class LoginViewModel: LoginViewModelOutputs {
     var inputs: LoginViewModelInputs { return self }
     var outputs: LoginViewModelOutputs { return self }
     
+    let isLoginSuccess: PublishRelay<Bool> = PublishRelay()
+    
     private var dependency: Dependency
     
     deinit {
@@ -36,5 +41,13 @@ class LoginViewModel: LoginViewModelOutputs {
 }
 
 extension LoginViewModel: LoginViewModelInputs {
+    func loginTapped(username: String?, password: String?) {
+        
+        if username == "admin" && password == "password" {
+            self.isLoginSuccess.accept(true)
+        } else {
+            self.isLoginSuccess.accept(false)
+        }
+    }
     
 }
