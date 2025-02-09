@@ -14,6 +14,7 @@ protocol LoginViewModelInputs {
 }
 
 protocol LoginViewModelOutputs {
+    var errorMessage: BehaviorRelay<String> { get }
     var isLoginSuccess: PublishRelay<Bool> { get }
 }
 
@@ -30,6 +31,7 @@ class LoginViewModel: LoginViewModelOutputs {
     var inputs: LoginViewModelInputs { return self }
     var outputs: LoginViewModelOutputs { return self }
     
+    let errorMessage: BehaviorRelay<String> = BehaviorRelay(value: "")
     let isLoginSuccess: PublishRelay<Bool> = PublishRelay()
     
     private var dependency: Dependency
@@ -42,7 +44,16 @@ class LoginViewModel: LoginViewModelOutputs {
 extension LoginViewModel: LoginViewModelInputs {
     func loginTapped(username: String?, password: String?) {
         
-        if username == "admin" && password == "password" {
+        guard let uname = username, !uname.isEmpty else {
+            self.errorMessage.accept("Username field should not be empty")
+            return
+        }
+        guard let pword = password, !pword.isEmpty else {
+            self.errorMessage.accept("Password field should not be empty")
+            return
+        }
+        
+        if uname == "admin" && pword == "password" {
             self.isLoginSuccess.accept(true)
         } else {
             self.isLoginSuccess.accept(false)

@@ -71,6 +71,13 @@ extension LoginViewController {
     }
     
     private func bindOutputs() {
+        outputs
+            .errorMessage
+            .asDriver()
+            .filter({ !$0.isEmpty })
+            .drive(onNext: { [unowned self] (errorMessage) in
+                self.showAlert(type: .error, title: nil, message: errorMessage)
+            }).disposed(by: disposeBag)
         
         outputs
             .isLoginSuccess
